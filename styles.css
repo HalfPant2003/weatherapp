@@ -1,0 +1,241 @@
+/* Body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  overflow-x: hidden; /* to prevent horizontal scroll */
+  animation: gradientBackground 5s ease infinite alternate; /* Animated gradient background */
+}
+
+/* Animation for gradient background */
+@keyframes gradientBackground {
+  0% {
+      background-color: #f3c665;
+  }
+  20% {
+      background-color: #f5e555;
+  }
+  40% {
+      background-color: #d9f850;
+  }
+  60% {
+      background-color: #b5f351;
+  }
+  80% {
+      background-color: #acf766;
+  }
+  90% {
+      background-color: #91f8a2;
+  }
+}
+
+/* Container styles */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for container */
+}
+
+.header, .footer {
+  text-align: center;
+  padding: 4px 0;
+  background-color: #f2f39b; /* Yellow background color for header and footer */
+  color: #333; /* Dark text color for header and footer */
+  border-radius: 10px;
+  box-shadow: 70px 70px 100px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.header:hover, .footer:hover {
+  transform: translate(0, -20px); /* Move header and footer up on hover */
+  box-shadow: 70px 70px 100px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+.header h1, .footer h1 {
+  font-size: 40px;
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+/* Weather input styles */
+.weather-input {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.city-input {
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  width: 70%;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Light gray border */
+  background-color: #f9f9f9; /* Light gray background */
+}
+
+/* Search button styles */
+.search-btn,
+.location-btn {
+  padding: 8px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50; /* Green color */
+  color: #fcf9f9; /* White text color */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover,
+.location-btn:hover {
+  background-color: #388e3c; /* Darker green color on hover */
+}
+
+/* Weather data styles */
+.weather-data {
+  background-color: #f0f0f0; /* Light gray background for weather data */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for weather data */
+  overflow: hidden; /* Add overflow property */
+}
+/*current weather*/
+
+.current-weather {
+  font-family: 'Roboto', sans-serif; /* Use Roboto font or similar */
+  background-image: url('your-image-url.jpg'); /* Replace 'your-image-url.jpg' with the URL of your desired background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.current-weather::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3); /* 30% transparency white background */
+}
+
+
+/* Weather cards styles */
+.weather-cards {
+  list-style-type: none;
+  padding: 0; /* Set padding to 0 to remove default padding */
+  margin: 0; /* Set margin to 0 to remove default margin */
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap if they exceed container width */
+  justify-content: flex-start; /* Align cards to the start of the container */
+  position: relative; /* Relative position for pseudo-element */
+}
+
+
+.weather-report::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* 30% transparency black background */
+}
+
+/* Weather cards styles */
+.card {
+  flex-basis: calc(25% - 30px); /* Set flex-basis to distribute cards evenly across 3 columns with margin */
+  margin-bottom: 20px; /* Add margin bottom for spacing between rows of cards */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #d8d0d0; /* White background for cards */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for cards */
+  transition: transform 0.3s ease;
+  margin-right: 45px; /* Add margin-right for spacing between cards */
+  position: relative; /* Relative position for pseudo-element */
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.3); /* 30% transparency white background */
+  z-index: -1;
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  opacity: 0; /* Initially invisible */
+}
+
+.card:hover::before {
+  opacity: 1; /* Make the background visible on hover */
+}
+
+.card:hover {
+  transform: translateY(-20px); /* Move card up on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a glowing effect on hover */
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 20px; /* Decreased font size for heading */
+  color: #333; /* Dark gray color for heading */
+}
+
+.card h6 {
+  margin: 8px 0; /* Reduced margin */
+  font-size: 16px; /* Decreased font size for details */
+  color: #555; /* Medium gray color for details */
+}
+
+/* Footer styles */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f2f39b; /* Yellow background color for footer */
+  color: #333; /* Dark text color for footer */
+  border-radius: 10px;
+  box-shadow: 70px 70px 100px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for transform and box-shadow */
+}
+
+.footer:hover {
+  transform: translate(0, -20px); /* Move footer up on hover */
+  box-shadow: 70px 70px 100px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover */
+}
+
+.footer h1 {
+  font-size: 100px;
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .header h1, .footer h1 {
+      font-size: 30px; /* Adjust font size for smaller screens */
+      padding: 10px 15px; /* Adjust padding for smaller screens */
+  }
+
+  .container {
+      padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .weather-cards, .weather-report {
+      width: 100%; /* Set width to 100% for smaller screens */
+      padding: 10px; /* Adjust padding for smaller screens */
+      margin-right: 0; /* Remove margin-right for smaller screens */
+  }
+
+  .card {
+      flex-basis: calc(50% - 20px); /* Set flex-basis for 2 columns on smaller screens */
+  }
+}
